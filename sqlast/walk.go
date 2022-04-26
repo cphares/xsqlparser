@@ -159,6 +159,8 @@ func Walk(v Visitor, node Node) {
 	// nothing to do
 	case *JoinCondition:
 		Walk(v, n.SearchCondition)
+	case *NamedColumnsJoin:
+	// nothing to do
 	case *NaturalJoin:
 		Walk(v, n.LeftElement)
 		Walk(v, n.Type)
